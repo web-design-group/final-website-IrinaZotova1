@@ -1,0 +1,645 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* border-box меняет модель расчета размеров
+	- padding и border включаются в общую ширину/высоту */
+}
+
+@font-face {
+    font-family: 'Enthalpy 298';
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Century Gothic';
+    line-height: 1.6;
+    color: #2C2C2C;
+    background-color: #000816;
+    font-size: 18px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto; /* центрирование body если есть max-width меньше 100% */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.section-title, .hero-title, .card-title, .question-title {
+    font-family: 'Enthalpy 298';
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+}
+
+.btn-primary, .btn-ticket, .btn-find, .btn-details {
+    background: #8B0000;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    font-family: 'Enthalpy 298';
+    letter-spacing: 0.15em;
+}
+
+/* ШАПКА */
+.header {
+    background-color: #000816;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.header-content {
+    display: grid; /* 2 колонки: первая - под логотип, вторая занимает всё оставшееся пространство */
+    grid-template-columns: auto 1fr;
+    align-items: center; /* выравнивание элементов по вертикали по центру */
+    gap: 40px;
+}
+
+.logo-section {
+    display: grid; 
+    grid-template-rows: auto auto; 
+    justify-items: center;
+}
+
+.logo-image {
+    width: 107px;
+    height: 107px;
+    background: url('../img/logo.png');
+    background-size: contain;
+}
+
+.logo-text {
+    font-family: 'Enthalpy 298';
+    font-size: 25px;
+    color: #D4AF37;
+    letter-spacing: 0.15em;
+}
+
+.nav {
+    display: grid; /* 4 колонки равной ширины, каждая подстраивается под содержимое */
+    grid-template-columns: repeat(4, auto);
+    justify-content: end; /* вся сетка к правому краю контейнера */
+    gap: 4vw; /* адаптивное расстояние - 4% от ширины viewport (Viewport Width) */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    font-family: 'Enthalpy 298';
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-link:active {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+/* hero section */
+.hero {
+    padding: 60px 0;
+    background-color: #000816;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Секция афиши */
+.afisha {
+    padding: 60px 0;
+    background-color: #000816;
+}
+
+.afisha-title {
+    font-family: 'Enthalpy 298';
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+}
+
+/* Блок поиска */
+.search-block {
+    display: grid; /* поле поиска занимает всё доступное пространство, кнопка - только нужное */
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.search-input-container {
+    display: grid; /* 3 колонки: иконка фильтра, поле ввода, иконка календаря */
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    background: #F3E5D8;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background: #F3E5D8;
+    font-family: 'Century Gothic';
+    font-size: 16px;
+    width: 100%;
+}
+
+.filter-icon, .calendar-icon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.filter-icon {
+    background-image: url('../img/фильтр.png');
+}
+
+.calendar-icon {
+    background-image: url('../img/календарь.png');
+}
+
+.btn-find {
+    padding: 10px 50px;
+    border-radius: 25px;
+    font-size: 18px;
+}
+
+.btn-find:hover {
+    background: #D4AF37;
+    color: #2C2C2C;
+}
+
+.btn-find:active {
+    color: #8B0000;
+    background: #D4AF37;
+    text-decoration: underline;
+}
+
+/* Всплывающие окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #F3E5D8;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-title {
+    font-family: 'Enthalpy 298';
+    font-size: 24px;
+    color: #2C2C2C;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 0.15em;
+}
+
+/* Стили для радио-кнопок фильтра */
+.filter-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-option:last-child {
+    border-bottom: none;
+}
+
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #2C2C2C;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.radio-circle.active {
+    border-color: #8B0000;
+}
+
+.radio-circle.active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #8B0000;
+    border-radius: 50%;
+}
+
+.filter-text {
+    font-family: 'Century Gothic';
+    font-size: 18px;
+    color: #2C2C2C;
+    transition: color 0.3s ease;
+}
+
+.filter-option:hover .filter-text {
+    color: #8B0000;
+}
+
+.modal-close {
+    background: #8B0000;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 15px;
+    font-family: 'Enthalpy 298';
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    display: block;
+    margin: 25px auto 0;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #D4AF37;
+    color: #2C2C2C;
+}
+
+/* Календарь */
+.calendar {
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.calendar-nav:hover {
+    transform: scale(1.1);
+}
+
+.calendar-prev {
+    background-image: url('../img/button_treug_left.png');
+}
+
+.calendar-next {
+    background-image: url('../img/button_treug_right.png');
+}
+
+.calendar-title {
+    font-family: 'Enthalpy 298';
+    font-size: 20px;
+    color: #2C2C2C;
+    letter-spacing: 0.15em;
+}
+
+.calendar-grid {
+    display: grid; /* 7 колонок равной ширины для дней недели */
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.calendar-day {
+    padding: 10px;
+    font-family: 'Century Gothic';
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.calendar-day:hover {
+    background: #8B0000;
+    color: white;
+}
+
+.calendar-day.selected {
+    background: #8B0000;
+    color: white;
+}
+
+.calendar-weekday {
+    font-weight: bold;
+    color: #2C2C2C;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.calendar-day.empty {
+    background: transparent;
+    cursor: default;
+}
+
+.calendar-day.empty:hover {
+    background: transparent;
+    color: #2C2C2C;
+}
+
+/* Блок спектакля */
+.play-block {
+    background: #F3E5D8;
+    border-radius: 8px;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.play-content {
+    display: grid; /* Две колонки равной ширины для изображения и текстовой информации */
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.play-image1 {
+    border-radius: 8px;
+    border-top-left-radius: 80px;
+    height: 400px;
+    background: url("../img/идиот1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.play-image2 {
+    border-radius: 8px;
+    border-top-left-radius: 80px;
+    height: 400px;
+    background: url("../img/юиа1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.play-image3 {
+    border-radius: 8px;
+    border-top-left-radius: 80px;
+    height: 400px;
+    background: url("../img/мим2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.play-image4 {
+    border-radius: 8px;
+    border-top-left-radius: 80px;
+    height: 400px;
+    background: url("../img/ничего не бойся2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.play-info {
+    display: grid;
+	/*  строки: 
+       auto - заголовок
+       auto - описание  
+       auto - театр
+       auto - дополнительная информация
+       1fr - кнопки (занимают оставшееся пространство, прижимаются к низу) */
+    grid-template-rows: auto auto auto auto 1fr;
+    gap: 20px;
+}
+
+.play-title {
+    font-size: 28px;
+    color: #000;
+    text-align: left;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    font-family: 'Enthalpy 298';
+}
+
+.play-description, .play-theater {
+    font-size: 18px;
+    color: #000;
+    font-family: 'Century Gothic';
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.play-buttons {
+    display: grid;
+    grid-template-columns: 1fr; /* одна колонка - кнопки друг под другом */
+    gap: 10px;
+    align-self: end; /* контейнер к нижнему краю */
+    justify-items: start; /* выравнивание кнопок по левому краю */
+}
+
+/* Контейнер для кнопок */
+.buttons-container {
+    display: grid;
+	/*  auto-fit создает столько колонок, сколько помещается
+       minmax(200px, 1fr) - минимальная ширина колонки 200px, максимальная - 1fr
+       Колонки автоматически переносятся при нехватке места */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    max-width: 50px;
+    margin: 0 auto; /* центрирование контейнера */
+}
+
+.btn-ticket, .btn-details {
+    padding: 12px 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;    
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-height: 50px;
+    max-width: 200px;
+}
+
+.btn-ticket:hover {
+    background: #D4AF37;
+    color: #2C2C2C;
+}
+
+.btn-ticket:active {
+    color: #8B0000;
+    background: #D4AF37;
+    text-decoration: underline;
+}
+
+.btn-details:hover {
+    background: #D4AF37;
+    color: #2C2C2C;
+}
+
+.btn-details:active {
+    color: #8B0000;
+    background: #D4AF37;
+    text-decoration: underline;
+}
+
+/* ПОДВАЛ */
+.footer {
+    background: #8B0000;
+    padding: 60px 0 40px;
+    color: white;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.footer-content {
+    display: grid;
+	/* 3 колонки: логотип | контакты (занимают основное пространство) | соцсети */
+    grid-template-columns: auto 1fr auto; 
+    gap: 40px;
+    align-items: start; /* выравнивание элементов по верхнему краю */
+}
+
+.footer-logo-section {
+    display: grid;
+	/* 2 строки для изображения логотипа и текста */
+    grid-template-rows: auto auto;
+    justify-items: center; /* центрирование по горизонтали */
+    gap: 10px;
+}
+
+.footer-logo-image {
+    width: 110px;
+    height: 110px;
+    background: url('../img/logo.png') no-repeat center;
+    background-size: contain;
+}
+
+.footer-logo-text {
+    font-family: 'Enthalpy 298';
+    font-size: 20px;
+    color: #D4AF37;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+.footer-contacts, .footer-social {
+    justify-self: center;
+}
+
+.footer-title {
+    font-size: 20px;
+    color: white;
+    font-family: 'Enthalpy 298';
+    letter-spacing: 0.15em;
+    line-height: 1.4;
+}
+
+.emails {
+    display: grid;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.emails p {
+    font-size: 16px;
+    color: white;
+    font-family: 'Century Gothic';
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.emails p:hover {
+    color: #D4AF37;
+}
+
+.social-icons {
+    display: grid;
+    grid-template-columns: repeat(3, auto); /* 3 колонки для иконок социальных сетей */
+    gap: 40px;
+    margin-top: 25px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-icon.tg {
+    background-image: url('../img/icon-tg.png');
+}
+
+.social-icon.vk {
+    background-image: url('../img/icon-vk.png');
+}
+
+.social-icon.rutube {
+    background-image: url('../img/icon-ru.png');
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}

@@ -1,0 +1,883 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*  padding и border в ширине элемента */
+}
+
+@font-face {
+    font-family: 'Enthalpy 298';
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Century Gothic';
+    line-height: 1.6;
+    color: #2C2C2C;
+    background-color: #000816;
+    font-size: 18px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+
+.section-title, .hero-title, .gold-title, .card-title, .question-title {
+    font-family: 'Enthalpy 298';
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+}
+
+.btn-gold, .btn-primary, .btn-ticket {
+    background: #8B0000;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    font-family: 'Enthalpy 298';
+    letter-spacing: 0.15em;
+}
+
+.btn-gold {
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 24px;
+}
+
+.btn-gold:hover {
+    background: #D4AF37;    
+    color: #2C2C2C;
+}
+
+.btn-gold:active {
+    color: #8B0000;    
+    background: #D4AF37;    
+    text-decoration: underline;
+}
+
+.btn-primary {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.btn-primary:hover {
+    background: #D4AF37;    
+    color: #2C2C2C;
+}
+
+.btn-primary:active {
+    color: #8B0000;    
+    background: #D4AF37;    
+    text-decoration: underline;
+}
+
+.btn-ticket {
+    width: 180px;
+    height: 45px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-top: auto; /* автоматический отступ сверху для позиционирования внизу */
+}
+
+.btn-ticket:hover {
+    background: #D4AF37;    
+    color: #2C2C2C;
+}
+
+.btn-ticket:active {
+    color: #8B0000;    
+    background: #D4AF37;    
+    text-decoration: underline;
+}
+
+/*  ШАПКА */
+.header {
+    background-color: #000816;
+    padding: 15px 0;
+    width: 100%;
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* вертикальное центрирование */
+    width: 100%; /*по центру по вертикали*/
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-image {
+    width: 107px;
+    height: 107px;
+    background-size: contain;
+    border-radius: 8px;
+}
+
+.logo-text {
+    font-family: 'Enthalpy 298';
+    font-size: 25px;
+    color: #D4AF37;    
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between; /* равные промежутки между ссылками */
+    align-items: center;
+    flex: 1; /* занимает все доступное пространство */
+    max-width: 600px;
+    margin-left: 40px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    font-family: 'Enthalpy 298';
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+    padding: 8px 0;
+    flex: 1; /* каждая ссылка занимает равную ширину */
+    text-align: center;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-link:active {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+/* hero section */
+.hero {
+    padding: 60px 0;
+    background-color: #000816;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Золотой блок с асимметричными скруглениями */
+.gold-block {
+    background: #D4AF37;
+    border-radius: 8px;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+
+.gold-content {
+    display: flex;
+    justify-content: space-between; /* текст слева, изображения справа */
+    align-items: stretch; /* растягивание элементов по высоте */
+    gap: 25px;
+    height: 400px;
+}
+
+.gold-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* распределение контента по вертикали */
+}
+
+.gold-title {
+    font-size: 28px;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: left;
+    letter-spacing: 0.15em;
+}
+
+.gold-info {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 15px;
+    font-family: 'Century Gothic';
+    line-height: 1.4;
+}
+
+.button-container {
+    margin-top: auto; /* кнопка к низу контейнера */
+}
+
+.gold-images {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+    flex: 1.5; /* 1.5 части пространства (чуть больше чем текст) */
+}
+
+.left-images {
+    display: flex;
+    flex-direction: column; /* вертикальное расположение */
+    gap: 15px;
+    flex: 1;
+}
+
+.gold-image {
+    border-radius: 8px;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gold-image.small1 {
+    background-image: url('../img/последняя сказка1.png');
+    flex: 1;
+}
+
+.gold-image.small2 {
+    background-image: url('../img/последняя сказка3.png');
+    flex: 1;
+}
+
+.gold-image.large {
+    background-image: url('../img/последняя сказка2.png');
+    flex: 1.2;
+    border-bottom-right-radius: 80px;
+}
+
+/*СЛАЙДЕР СПЕКТАКЛЕЙ  */
+.current-performances {
+    padding: 60px 0;
+    background-color: #000816;
+    position: relative;
+}
+
+/* Контейнер слайдера со скрытым переполнением для эффекта слайда */
+.slider-container {
+    position: relative; /*относительное позиционирование элемента*/
+    overflow: hidden; /* скрывает неактивные слайды */
+    margin-bottom: 40px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform; /* оптимизация анимации для браузера */
+}
+
+.slide-group {
+    display: flex;
+    flex: 0 0 100%; /* каждая группа слайдов занимает 100% ширины */
+    justify-content: space-between;
+    gap: 20px;
+    min-width: 100%;
+}
+
+/* Сетка карточек спектаклей */
+.performances-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap; /* перенос на следующую строку при нехватке места */
+}
+
+.performance-card {
+    background: #F3E5D8;
+    border-radius: 8px;
+    flex: 1; /* гибкое распределение ширины */
+    min-width: 280px; /* минимальная ширина перед переносом */
+    max-width: 350px; /*максимальная ширина */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-size: cover; /*изображение масштабируется без изменения пропорций так, чтобы закрыть фон всего элемента*/
+    background-position: center; /*расположение фонового изображения по центру элемента */
+    background-repeat: no-repeat; /*фоновое изображение не будет повторяться*/
+    position: relative; /*относительное позиционирование элемента*/
+    overflow: hidden; /*обрезает содержимое, выходящее за границы блока элемента*/
+}
+
+/* Специальные скругления для разных позиций карточек */
+.card-image.special-left {
+    border-top-left-radius: 80px;
+}
+
+.card-image.special-right {
+    border-bottom-right-radius: 80px;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #2C2C2C;
+    text-align: left;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+}
+
+.card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.performance-details {
+    width: 100%;
+}
+
+/*расположение даты и времени в строку */
+.card-date-time {
+    display: flex;
+    justify-content: space-between; /* дата слева, время справа */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.date {
+    font-size: 16px;
+    color: #2C2C2C;
+    font-family: 'Century Gothic', Arial, sans-serif;
+    text-align: left;
+    flex: 1;
+}
+
+.time {
+    font-size: 16px;
+    color: #2C2C2C;
+    font-family: 'Century Gothic', Arial, sans-serif;
+    text-align: right;
+    flex-shrink: 0; /* нельзя уменьшать ширину */
+}
+
+/* навигационные элементы */
+.cards-navigation {
+    display: flex;
+    justify-content: space-between; /* кнопки по краям */
+    align-items: center;
+    margin-top: 30px;
+}
+
+.cards-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.cards-nav-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ПОИСК ПО НАСТРОЕНИЮ */
+.mood-search {
+    padding: 60px 0;
+    background-color: #000816;
+}
+
+/* расположение вопросов и изображения в одной строке */
+.mood-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* выравнивание по высоте */
+    gap: 40px;
+}
+
+.mood-questions {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-block {
+    background: #F3E5D8;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.question-title {
+    font-size: 24px;
+    color: #2C2C2C;
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.15em;
+}
+
+.mood-options {
+    display: flex;
+    flex-direction: column; /* вертикальное расположение опций */
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.mood-option {
+    display: flex;
+    align-items: center; /* выравнивание по центру по вертикали */
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* радио-кнопки */
+.radio-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #2C2C2C;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* запрет на уменьшение */
+}
+
+.radio-circle.active {
+    background: #8B0000;
+    border-color: #8B0000;
+}
+
+.option-text {
+    color: #2C2C2C;
+    font-family: 'Century Gothic';
+    font-size: 16px;
+    text-align: left;
+}
+
+/* навигация в блоке настроения */
+.navigation-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.question-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2C2C2C;    
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #D4AF37;
+}
+
+.indicator:hover {
+    background: #D4AF37;
+}
+
+.question-nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.question-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+.question-nav-btn:hover {
+    transform: scale(1.1);
+}
+
+.question-nav-btn img {
+    width: 30px;
+    height: 45px;
+    display: block;
+}
+
+.mood-image {
+    flex: 1;
+    height: 500px;
+    border-radius: 8px;
+    background-image: url('../img/театр эстетика.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ГАЛЕРЕЯ ИСТОРИИ СПЕКТАКЛЯ */
+.performance-story {
+    padding: 60px 0;
+    background-color: #000816;
+}
+
+/* галерея с фото */
+.story-gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* перенос*/
+}
+
+.main-image {
+    flex: 2;
+    min-width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    background-image: url('../img/ннбяст1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.side-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 200px;
+}
+
+.small-image1, .small-image2 {
+    flex: 1;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.small-image1 {
+    background-image: url('../img/ннбяст2.png');
+}
+
+.small-image2 {
+    background-image: url('../img/ннбяст3.png');
+}
+
+.vertical-image {
+    flex: 1;
+    min-width: 200px;
+    height: 300px;
+    border-radius: 8px;
+    background-image: url('../img/ннбяст4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ПОДВАЛ */
+.footer {
+    background: #8B0000;
+    padding: 60px 0 40px;
+    color: white;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* перенос элементов на новую строку */
+    gap: 40px;
+    row-gap: 60px; /* вертикальный отступ между строками */
+}
+
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 200px; /* flex-grow: 1, flex-shrink: 1, flex-basis: 200px */
+    min-width: 180px;
+    max-width: 250px;
+}
+
+.footer-logo-image {
+    width: 110px;
+    height: 110px;
+    background: url('../img/logo.png') no-repeat center;
+    background-size: contain;
+    border-radius: 8px;
+}
+
+.footer-logo-text {
+    font-family: 'Enthalpy 298';
+    font-size: 20px;
+    color: white;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+.footer-contacts, .footer-social {
+    flex: 1 1 250px; /* гибкое распределение с базовым размером */
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.footer-title {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+    font-family: 'Enthalpy 298';
+    letter-spacing: 0.15em;
+    line-height: 1.4;
+}
+
+.emails {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.emails p {
+    font-size: 16px;
+    color: white;
+    font-family: 'Century Gothic';
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.emails p:hover {
+    color: #D4AF37;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start; /* выравнивание по левому краю */
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.social-icon.tg {
+    background-image: url('../img/icon-tg.png');
+}
+
+.social-icon.vk {
+    background-image: url('../img/icon-vk.png');
+}
+
+.social-icon.rutube {
+    background-image: url('../img/icon-ru.png');
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+/* СТИЛИ ДЛЯ СЛАЙДЕРА */
+
+.slider-container .performance-card {
+    background: #F3E5D8;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.slider-container .card-image {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-container .card-image.special-left {
+    border-top-left-radius: 80px;
+}
+
+.slider-container .card-image.special-right {
+    border-bottom-right-radius: 80px;
+}
+
+.slider-container .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.slider-container .card-title {
+    font-size: 24px;
+    color: #2C2C2C;
+    text-align: left;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    font-family: 'Enthalpy 298';
+}
+
+.slider-container .card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slider-container .performance-details {
+    width: 100%;
+}
+
+.slider-container .card-date-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.slider-container .date {
+    font-size: 16px;
+    color: #2C2C2C;
+    font-family: 'Century Gothic';
+    text-align: left;
+    flex: 1;
+}
+
+.slider-container .time {
+    font-size: 16px;
+    color: #2C2C2C;
+    font-family: 'Century Gothic';
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.slider-container .btn-ticket {
+    width: 180px;
+    height: 45px;
+    background: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Enthalpy 298';
+    letter-spacing: 0.15em;
+    margin-top: auto; /* автоматический отступ для позиционирования внизу */
+}
+
+/* ЗАГОЛОВОЧНЫЕ ИЗОБРАЖЕНИЯ И ФОНЫ*/
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: inherit; /* наследование скруглений */
+}
+
+/* удаление старых фоновых изображений из классов карточек */
+.card-image.central,
+.card-image.special-left, 
+.card-image.special-right {
+    background-image: none !important;
+}
+
+.slider-container .card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* новые изображения для слайдера */
+.image-placeholder.new-image1 {
+    background-image: url('../img/последняя сказка1.png');
+}
+
+.image-placeholder.new-image2 {
+    background-image: url('../img/последняя сказка2.png');
+}
+
+.image-placeholder.new-image3 {
+    background-image: url('../img/последняя сказка3.png');
+}
+
+/* АНИМАЦИИ */
+.slider-container .performance-card {
+    animation: fadeInUp 0.6s ease-out;
+}

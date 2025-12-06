@@ -1,0 +1,352 @@
+@font-face {
+	font-family: 'Enthalpy 298';
+	src: url('enthalpy298.woff2') format('woff2'),
+	url('enthalpy298.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+        
+body {
+	font-family: 'Century Gothic', sans-serif;
+	background-color: #000816;
+	color: #ffffff;
+	line-height: 1.6;
+}
+        
+/* Шапка */
+.navbar {
+	background-color: #000816;
+	padding: 15px 0;
+	gap: 1.5rem;
+}
+        
+.logo-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+        
+.logo-image {
+	width: 90px;
+	height: 90px;
+	background-image: url('../img/logo.png');          
+	background-size: cover;
+	background-position: center;
+}
+        
+.logo-text {
+	font-family: 'Enthalpy 298', sans-serif;
+	color: #D4AF37;
+	letter-spacing: 0.15em;
+	font-size: 1.2rem;
+}
+        
+.navbar-nav .nav-link {
+	color: #ffffff;
+	font-family: 'Enthalpy 298', sans-serif;
+	letter-spacing: 0.15em;
+	padding: 8px 20px;
+	transition: all 0.3s ease;
+}
+        
+.navbar-nav .nav-link:hover {
+	text-decoration: underline;
+	color: #D4AF37;
+}
+        
+.navbar-nav .nav-link:active {
+	color: #D4AF37;
+	text-decoration: none;
+}
+        
+/* Основной контент */
+.page-title {
+	font-family: 'Enthalpy 298', sans-serif;
+	font-size: 2rem;
+	color: #ffffff;
+	text-align: left;
+	margin: 40px 0;
+	letter-spacing: 0.15em;
+}
+        
+.contacts-section {
+	margin-bottom: 30px;
+}
+        
+.section-subtitle {
+	font-family: 'Enthalpy 298', sans-serif;
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+	text-align: left;
+	letter-spacing: 0.15em;
+}
+        
+.contact-info {
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+}
+        
+.contact-label {
+	font-weight: bold;
+	margin-right: 10px;
+	color: #D4AF37;
+	white-space: nowrap;
+}
+        
+.email-link {
+	color: #ffffff;
+	text-decoration: none;
+	white-space: nowrap;
+}
+        
+.email-link:hover {
+	color: #D4AF37;
+	text-decoration: underline;
+}
+        
+/* Социальные сети */
+.social-icons {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 100px;
+	flex-wrap: wrap;
+	margin-top: 25px;
+}
+        
+.social-icon {
+	width: 60px;
+	height: 60px;
+	border-radius: 8px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: all 0.3s ease;
+	flex-shrink: 0;
+}
+        
+.social-icon.tg {
+	background-image: url('../img/icon-tg.png');
+}
+        
+.social-icon.vk {
+	background-image: url('../img/icon-vk.png');
+}
+        
+.social-icon.rutube {
+background-image: url('../img/icon-ru.png');
+}
+        
+.social-icon:hover {
+	transform: scale(1.15);
+	filter: brightness(1.2);
+}
+        
+/* Форма */
+/* Flex-стили только для блока формы */
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contacts-grid {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-section-wrapper {
+            flex: 0.9;
+            min-width: 300px;
+        }
+        
+.form-section {
+	background-color: #f5f5dc;
+	border-radius: 20px 0 0 20px;
+	padding: 30px;
+	margin-bottom: 30px;
+	border-top-left-radius: 40px;
+	border-bottom-right-radius: 60px;
+}
+        
+.form-title {
+	font-family: 'Enthalpy 298', sans-serif;
+	font-size: 1.5rem;
+	color: #000816;
+	text-align: left;
+	margin-bottom: 20px;
+	letter-spacing: 0.15em;
+}
+        
+.form-subtitle {
+	color: #000816;
+	text-align: left;
+	margin-bottom: 25px;
+}
+        
+/* Стили для плавающих label в форме */
+.form-label {
+	color: #888888;
+	margin-bottom: 8px;
+	font-weight: normal;
+	position: absolute;
+	top: 12px;
+	left: 15px;
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+        
+.form-control {
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	color: #000816;
+	margin-bottom: 20px;
+	padding: 10px 15px;
+	padding-top: 30px;
+	height: 60px;
+}
+        
+.form-control:focus {
+	background-color: rgba(255, 255, 255, 1);
+	border-color: #D4AF37;
+	color: #000816;
+	/* Bootstrap-like фокус тень */
+	box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+        
+/* Анимация для плавающих label
+.form-control:focus + .form-label - применяется к label когда поле в фокусе
+.form-control:not(:placeholder-shown) + .form-label - применяется когда поле не пустое*/
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label {
+	top: 5px;
+	font-size: 0.8rem;
+	color: #000816;
+}
+        
+textarea.form-control {
+	height: auto;  /* высота автоматически подстраивается под содержимое*/
+	padding-top: 30px;
+}
+        
+.btn-primary {
+	background-color:#8B0000;
+	border: none;
+	padding: 10px 30px;
+	font-family: 'Enthalpy 298', sans-serif;
+	letter-spacing: 0.15em;
+	max-width: 200px;
+	width: 100%;
+}
+        
+.btn-primary:hover {
+    background: #D4AF37;
+    color: #2C2C2C;
+}
+
+.btn-primary:active {
+    color: #8B0000;
+    background: #D4AF37;
+    text-decoration: underline;
+}   
+/* Подвал */
+footer {
+	background-color: #8B0000;
+	color: #ffffff;
+	padding: 40px 0 20px;
+	margin-top: 60px;
+}
+
+.footer-logo-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+}
+        
+.footer-logo-image {
+	width: 90px;
+	height: 90px;
+	background-image: url('../img/logo.png');
+	background-size: cover;
+	background-position: center;
+
+}
+        
+.footer-logo-text {
+	font-family: 'Enthalpy 298', sans-serif;
+	color: #D4AF37;
+	letter-spacing: 0.15em;
+}
+        
+.footer-title {
+	font-family: 'Enthalpy 298', sans-serif;
+	font-size: 1.2rem;
+	letter-spacing: 0.15em;
+	margin-bottom: 15px;
+	text-align: left;
+}
+        
+.footer-email {
+	color: #ffffff;
+	text-decoration: none;
+	display: block;
+	margin-bottom: 8px;
+	text-align: left;
+}
+        
+.footer-email:hover {
+	color: #D4AF37;
+}
+        
+/* Соцсети иконки в футере */
+.footer-social-icons {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 60px;
+	flex-wrap: wrap;
+}
+        
+.footer-social-icon {
+	width: 45px;
+	height: 45px;            
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: all 0.3s ease;
+	flex-shrink: 0;
+}
+        
+.footer-social-icon.tg {
+	background-image: url('../img/icon-tg.png');
+}
+        
+.footer-social-icon.vk {
+	background-image: url('../img/icon-vk.png');
+}
+        
+.footer-social-icon.rutube {
+	background-image: url('../img/icon-ru.png');
+}
+        
+.footer-social-icon:hover {
+	transform: scale(1.15);
+	filter: brightness(1.2);
+}
+        
+/*  позиционирование в сетке */
+.logo-grid {
+	margin-left: 3%; /* 1 колонка отступа, начинается со 2-й колонки */
+}
+        
+.nav-grid {
+	margin-left: 25%; /* начинается с 4-й колонки (3 колонки отступа) */
+	width: 80%; /* 6 колонок ширины, заканчивается на 10-й колонке */            
+}
+        
+.contacts-grid {
+	margin-left: 8.333333%; /* 1 колонка отступа */
+}
