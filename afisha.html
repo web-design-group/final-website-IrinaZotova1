@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АНТРАКТ - Ваш вечер начинается здесь</title>
+	<link rel="stylesheet" href="css/style_afisha.css">
+   
+</head>
+<body>
+    
+	<!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="header-content" style="text-decoration: none; color: inherit;">
+					<div class="logo-section">
+						<div class="logo-image"></div>
+						<div class="logo-text">АНТРАКТ</div>
+					</div>
+				</a>
+                <nav class="nav">
+                    <a href="#" class="nav-link">Афиша</a>
+                    <a href="#" class="nav-link">Сертификат</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                    <a href="#" class="nav-link">О нас</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    
+
+    <!-- Секция афиши -->
+    <section class="afisha">
+        <div class="container">
+            <h2 class="afisha-title">АФИША</h2>
+            
+            <!-- Блок поиска -->
+            <div class="search-block">
+                <div class="search-input-container">
+                    <div class="filter-icon" id="filterBtn"></div>
+                    <input type="text" placeholder="ПОИСК" class="search-input">
+                    <div class="calendar-icon" id="calendarBtn"></div>
+                </div>
+                <button class="btn-find">НАЙТИ</button>
+            </div>
+            
+            <!-- Блок спектакля -->
+            <div class="play-block">
+                <div class="play-content">
+                    <div class="play-image1"></div>
+                    <div class="play-info">
+                        <h3 class="play-title">ИДИОТ</h3>
+                        <p class="play-description">Главный герой «Идиота» — князь Мышкин, человек «извне», живущий за границей, что даёт ему уникальную перспективу на Россию.</p>
+                        <p class="play-theater">театр на Таганке <br>29 окт 19:00</p>                    
+                        <div class="play-buttons">
+                            <button class="btn-ticket">КУПИТЬ БИЛЕТ</button>
+                            <button class="btn-details">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			
+			<div class="play-block">
+                <div class="play-content">
+                    <div class="play-image3"></div>
+                    <div class="play-info">
+                        <h3 class="play-title">Мастер и Маргарита</h3>
+                        <p class="play-description">Не просто театральная постановка, а мистический опыт, погружающий зрителя 
+						в философию Булгакова.</p>
+                        <p class="play-theater">театр на Таганке <br>29 окт 19:00</p>                    
+                        <div class="play-buttons">
+                            <button class="btn-ticket">КУПИТЬ БИЛЕТ</button>
+                            <button class="btn-details">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			
+			<div class="play-block">
+                <div class="play-content">
+                    <div class="play-image2"></div>
+                    <div class="play-info">
+                        <h3 class="play-title">Юнона и Авось</h3>
+                        <p class="play-description">«Юнона и Авось» — самая известная российская рок-опера. Постановка осуществлена труппой Рыбникова в Москве.</p>
+                        <p class="play-theater">театр на Таганке <br>29 окт 19:00</p>                    
+                        <div class="play-buttons">
+                            <button class="btn-ticket">КУПИТЬ БИЛЕТ</button>
+                            <button class="btn-details">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			
+			
+			<div class="play-block">
+                <div class="play-content">
+                    <div class="play-image4"></div>
+                    <div class="play-info">
+                        <h3 class="play-title">ничего не бойся <br>я с тобой</h3>
+                        <p class="play-description">Истории дружбы, любви и мечт. Микс Mamma Mia! и La La Land,  хиты группы «Секрет».</p>
+                        <p class="play-theater">театр на Таганке <br>29 окт 19:00</p>                    
+                        <div class="play-buttons">
+                            <button class="btn-ticket">КУПИТЬ БИЛЕТ</button>
+                            <button class="btn-details">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+        </div>
+    </section>
+
+    <!-- Всплывающее окно фильтра -->
+    <div class="modal-overlay" id="filterModal">
+        <div class="modal">
+            <h3 class="modal-title">Фильтр</h3>
+            <div class="filter-options">
+                <div class="filter-option">
+                    <div class="radio-circle"></div>
+                    <span class="filter-text">Драма</span>
+                </div>
+                <div class="filter-option">
+                    <div class="radio-circle"></div>
+                    <span class="filter-text">Мюзикл</span>
+                </div>
+                <div class="filter-option">
+                    <div class="radio-circle"></div>
+                    <span class="filter-text">Комедия</span>
+                </div>
+                <div class="filter-option">
+                    <div class="radio-circle"></div>
+                    <span class="filter-text">Эксперимент</span>
+                </div>
+                <div class="filter-option">
+                    <div class="radio-circle"></div>
+                    <span class="filter-text">Исторический</span>
+                </div>
+            </div>
+            <button class="modal-close" id="closeFilter">применить</button>
+        </div>
+    </div>
+
+    <!-- Всплывающее окно календаря -->
+    <div class="modal-overlay" id="calendarModal">
+        <div class="modal">
+            <h3 class="modal-title">Календарь</h3>
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button class="calendar-nav calendar-prev" id="prevMonth"></button>
+                    <div class="calendar-title" id="calendarTitle">ОКТЯБРЬ 2024</div>
+                    <button class="calendar-nav calendar-next" id="nextMonth"></button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Календарь будет генерироваться динамически -->
+                </div>
+            </div>
+            <button class="modal-close" id="closeCalendar">применить</button>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-section">
+                    <div class="footer-logo-image"></div>
+                    <div class="footer-logo-text">АНТРАКТ</div>
+                </div>
+                <div class="footer-contacts">
+                    <h4 class="footer-title">КОНТАКТЫ</h4>
+                    <div class="emails">
+                        <p>info@antrakt.ru</p>
+                        <p>booking@antrakt.ru</p>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4 class="footer-title">СОЦ СЕТИ</h4>
+                    <div class="social-icons">
+                        <div class="social-icon tg"></div>
+                        <div class="social-icon vk"></div>
+                        <div class="social-icon rutube"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Получаем элементы
+        const filterBtn = document.getElementById('filterBtn');
+        const calendarBtn = document.getElementById('calendarBtn');
+        const filterModal = document.getElementById('filterModal');
+        const calendarModal = document.getElementById('calendarModal');
+        const closeFilter = document.getElementById('closeFilter');
+        const closeCalendar = document.getElementById('closeCalendar');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        const calendarTitle = document.getElementById('calendarTitle');
+        const calendarGrid = document.getElementById('calendarGrid');
+
+        // Текущая дата для календаря
+        let currentDate = new Date();
+        let currentMonth = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
+
+        // Названия месяцев на русском
+        const monthNames = [
+            'ЯНВАРЬ', 'ФЕВРАЛЬ', 'МАРТ', 'АПРЕЛЬ', 'МАЙ', 'ИЮНЬ',
+            'ИЮЛЬ', 'АВГУСТ', 'СЕНТЯБРЬ', 'ОКТЯБРЬ', 'НОЯБРЬ', 'ДЕКАБРЬ'
+        ];
+
+        // Названия дней недели
+        const dayNames = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
+
+        // Функция для генерации календаря
+        function generateCalendar(month, year) {
+            // Обновляем заголовок
+            calendarTitle.textContent = `${monthNames[month]} ${year}`;
+            
+            // Очищаем сетку календаря
+            calendarGrid.innerHTML = '';
+            
+            // Добавляем заголовки дней недели
+            dayNames.forEach(day => {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-weekday';
+                dayElement.textContent = day;
+                calendarGrid.appendChild(dayElement);
+            });
+            
+            // Получаем первый день месяца и количество дней в месяце
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            const startingDay = firstDay.getDay();
+            
+            // Корректируем startingDay для понедельника как первого дня недели
+            const startingDayAdjusted = startingDay === 0 ? 6 : startingDay - 1;
+            
+            // Добавляем пустые ячейки для дней предыдущего месяца
+            for (let i = 0; i < startingDayAdjusted; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day empty';
+                calendarGrid.appendChild(emptyDay);
+            }
+            
+            // Добавляем дни текущего месяца
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = day;
+                dayElement.dataset.day = day;
+                dayElement.dataset.month = month;
+                dayElement.dataset.year = year;
+                
+                // Проверяем, является ли день сегодняшним
+                const today = new Date();
+                if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                    dayElement.classList.add('selected');
+                }
+                
+                calendarGrid.appendChild(dayElement);
+            }
+            
+            // Добавляем обработчики событий для дней
+            addDayEventListeners();
+        }
+
+        // Функция для добавления обработчиков событий на дни
+        function addDayEventListeners() {
+            const days = document.querySelectorAll('.calendar-day:not(.empty)');
+            days.forEach(day => {
+                day.addEventListener('click', function() {
+                    // Убираем выделение у всех дней
+                    days.forEach(d => d.classList.remove('selected'));
+                    // Выделяем выбранный день
+                    this.classList.add('selected');
+                });
+            });
+        }
+
+        // Функция для переключения на предыдущий месяц
+        function prevMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+
+        // Функция для переключения на следующий месяц
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+
+        // Инициализация календаря при загрузке
+        generateCalendar(currentMonth, currentYear);
+
+        // Открытие модальных окон
+        filterBtn.addEventListener('click', () => {
+            filterModal.style.display = 'flex';
+        });
+
+        calendarBtn.addEventListener('click', () => {
+            // Сбрасываем календарь к текущей дате при открытии
+            currentDate = new Date();
+            currentMonth = currentDate.getMonth();
+            currentYear = currentDate.getFullYear();
+            generateCalendar(currentMonth, currentYear);
+            calendarModal.style.display = 'flex';
+        });
+
+        // Закрытие модальных окон
+        closeFilter.addEventListener('click', () => {
+            filterModal.style.display = 'none';
+        });
+
+        closeCalendar.addEventListener('click', () => {
+            calendarModal.style.display = 'none';
+        });
+
+        // Переключение месяцев
+        prevMonthBtn.addEventListener('click', prevMonth);
+        nextMonthBtn.addEventListener('click', nextMonth);
+
+        // Закрытие при клике вне модального окна
+        window.addEventListener('click', (e) => {
+            if (e.target === filterModal) {
+                filterModal.style.display = 'none';
+            }
+            if (e.target === calendarModal) {
+                calendarModal.style.display = 'none';
+            }
+        });
+
+        // Скрипт для радио-кнопок
+        document.querySelectorAll('.radio-circle').forEach(circle => {
+            circle.addEventListener('click', function() {
+                document.querySelectorAll('.radio-circle').forEach(c => {
+                    c.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+            
+            circle.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('active')) {
+                    this.style.borderColor = '#D4AF37';
+                }
+            });
+            
+            circle.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('active')) {
+                    this.style.borderColor = '#2C2C2C';
+                }
+            });
+        });
+
+        // Обработка клика на весь блок фильтра
+        document.querySelectorAll('.filter-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radioCircle = this.querySelector('.radio-circle');
+                document.querySelectorAll('.radio-circle').forEach(c => {
+                    c.classList.remove('active');
+                });
+                radioCircle.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
